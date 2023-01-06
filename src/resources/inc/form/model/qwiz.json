@@ -1,0 +1,91 @@
+{
+    "title": "111Получить розничную цену на коллекцию",
+    "desc": "",
+    "step": {
+        "step1" : {
+            "title": "Тут будет вопрос №1",
+            "sub-title": "Возможно даже будет заполнен дополнительный подзаголовок",
+            "btn": "Следующий шаг",
+            "type": "answer",
+            "fields": {
+                "name": {
+                    "type": "radio",
+                    "images": "./assets/img/test-qwiz.png",
+                    "label": "Вариант 1"
+                },
+                "name1": {
+                    "type": "radio",
+                    "images": "./assets/img/test-qwiz.png",
+                    "label": "Вариант 2"
+                },
+                "name2": {
+                    "type": "radio",
+                    "images": "./assets/img/test-qwiz.png",
+                    "label": "Вариант 3"
+                }
+            }
+        },
+        "step2" : {
+            "title": "Тут будет вопрос №2",
+            "sub-title": "Возможно даже будет заполнен дополнительный подзаголовок",
+            "btn": "Следующий шаг",
+            "type": "answer",
+            "fields": {
+                "name": {
+                    "type": "checkbox",
+                    "images": "./assets/img/test-qwiz.png",
+                    "label": "Вариант 1"
+                },
+                "name1": {
+                    "type": "checkbox",
+                    "images": "./assets/img/test-qwiz.png",
+                    "label": "Вариант 2"
+                },
+                "name2": {
+                    "type": "checkbox",
+                    "images": "./assets/img/test-qwiz.png",
+                    "label": "Вариант 3"
+                }
+            }
+        },
+        "step3" : {
+            "title": "Контактные данные",
+            "sub-title": "Какой то шаг 1",
+            "images": "./assets/img/qwiz-img.png",
+            "type": "form",
+            "fields": {
+                "name": {
+                    "type": "text",
+                    "placeholder": "Введите ваше имя",
+                    "label": "Ваше имя*",
+                    "required": true
+                },
+                "phone": {
+                    "type": "tel",
+                    "placeholder": "Ваш телефон",
+                    "label": "Ваш телефон*",
+                    "required": true
+                },
+                "email": {
+                    "type": "text",
+                    "placeholder": "Ваш Email",
+                    "label": "Ваш Email*",
+                    "required": true
+                },
+                "city": {
+                    "type": "text",
+                    "placeholder": "Ваше город",
+                    "label": "Ваше город*",
+                    "required": true
+                },
+                "licenses": {
+                    "type": "checkbox",
+                    "label": "Я согласен на обработку персональных данных",
+                    "required": true,
+                    "value": true
+                }
+            }
+        }
+    },
+    "goal": "formDifference"
+}

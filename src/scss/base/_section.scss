@@ -1,0 +1,22 @@
+.section{
+  padding: rem(math.div($containerPadding, 2)) 0;
+
+  &-bg{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &-bg-color{
+    background-color: $mainColorSection;
+  }
+
+  &__title{
+    font-weight: bold;
+    font-size: $fontSizeTitle;
+    color: $mainColorTitle;
+    margin: 0px;
+    padding: 0px;
+  }
+
+}

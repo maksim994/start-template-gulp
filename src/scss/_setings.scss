@@ -1,0 +1,42 @@
+$fontFamily: sans-serif;
+$fontSize: rem(16); // где 16(px) - размер шрифта по умолчанию из макета
+
+// Основные цвета
+$mainColor: #000; // Цвет шрифта по умолчанию
+
+// НАСТРОЙКИ 
+
+
+//section
+$fontSizeTitle: rem(50); // где 50(px) - размер шрифта у заголовков .section__title
+$mainColorTitle: #000;
+
+$mainColorSection: #C7C7C7; // Цвет секции .section-bg-color
+$sectionPadding: 40; // (40 = по 20px сверху и снизу, 0 = нет отступа)
+
+//Header
+$bgColor: #FFF;
+$colorLink: #333;
+$bgColorBtn: reb;
+
+
+
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1170;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 30;
+
+
+// Ширина страбатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S

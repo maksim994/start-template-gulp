@@ -1,0 +1,105 @@
+$paddingTop: 0px;
+$mainTextMargins: 35px 0 60px 0;
+$cardsGapRow: 40px;
+$cardsGapCol: 20px;
+$cardsColor: #fff;
+$cardsBoxShadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+$cardsInRow: 4;
+$mainCardsColor: #1E7FFF;
+$iconsColor: linear-gradient(180deg, #93C2FF 0%, #1E7FFF 80.89%);
+$iconsBorder: 0px 0px 5px 5px;
+
+.advantages-1 {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  padding-top: $paddingTop;
+
+  @media (max-width: 1700px) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: 1555px) {
+    background-size: 1920px;
+  }
+
+  @media (max-width: $tablet) {
+    padding-top: 30px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 10px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: $fontSizeTitle;
+
+    @media (max-width: 370px) {
+      font-size: 2.8rem;
+    }
+
+    @media (max-width: 370px) {
+      font-size: 2.6rem;
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: $fontSize;
+    line-height: 150%;
+    margin: $mainTextMargins;
+  }
+
+  &__cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $cardsGapRow $cardsGapCol;
+
+    @media (max-width: $tablet) {
+      justify-content: center;
+    }
+  }
+
+  &__card {
+    position: relative;
+    text-align: center;
+    padding: 180px 20px 30px 20px;
+    width: calc((100% - (20px * 3)) / 4);
+    max-width: 280px;
+    background-color: $cardsColor;
+    box-shadow: $cardsBoxShadow;
+
+    @media (max-width: $tablet) {
+      width: calc((100% - (20px * 3)) / 3);
+    }
+
+    @media (max-width: $mobile) {
+      width: unset;
+    }
+
+    &-text {
+      font-size: $fontSize;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 20px);
+      width: 40px;
+      height: 4px;
+      background-color: $mainCardsColor;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 0;
+      left: calc(50% - 45px);
+      transform: translateY(-10%);
+      padding: 70px 20px 30px 20px;
+      background: $iconsColor;
+      border-radius: $iconsBorder;
+    }
+  }
+}

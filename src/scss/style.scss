@@ -1,0 +1,38 @@
+@use "sass:math";
+
+//Подключение шрифтов
+// @import "fonts";
+
+// Подключение миксинов 
+@import "base/mixins";
+
+@import "setings";
+@import "base/base";
+
+@import "block/header/header";
+@import "block/header/header-mobile";
+
+@import "block/section-promo";
+
+@import "block/advantages/advantages-1";
+
+@import "block/footer/footer-1";
+@import "block/footer/footer-2";
+
+
+
+@media(max-width: $pc){
+
+}
+
+@media(max-width: $tablet){
+  
+}
+
+@media(max-width: $mobile){
+  
+}
+
+@media(max-width: $mobileSmall){
+  
+}

@@ -1,0 +1,16 @@
+.btn{
+  padding: rem(10) rem(15);
+  background-color: #c7c7c7;
+  border: 1px solid #c7c7c7;
+
+  &:active,
+  &:focus,
+  &:hover{
+    background-color: transparent;
+  }
+
+  &:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

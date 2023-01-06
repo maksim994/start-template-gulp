@@ -1,0 +1,79 @@
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #E1E1E1;
+  padding: rem(10) 0px;
+
+  @media(max-width: $mobile){
+    display: none;
+  }
+
+  // .header__logo
+  &__logo {
+
+  }
+
+  // .header__menu
+
+  &__menu {
+  }
+
+  // .header__list
+
+  &__list {
+  }
+
+  // .header__list-item
+
+  &__list-item {
+
+    &:not(:last-child){
+      margin-right: rem(20);
+    }
+  }
+
+  // .header__list-link
+
+  &__list-link {
+  }
+
+  // .header__contact
+
+  &__contact {
+  }
+
+  // .header__contact-inner
+
+  &__contact-inner {
+
+    margin-right: 10px;
+  }
+
+  // .header__contact-link
+
+  &__contact-link {
+  }
+
+  // .header__phone
+
+  &__phone {
+  }
+
+  // .header__email
+
+  &__email {
+  }
+
+  // .header__btn
+
+  &__btn {
+  }
+
+  &-clone{
+    position: fixed;
+    top: -10rem;
+    left: 0;
+    right: 0;
+    transition: 0.5s;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 28%);
+  }
+}

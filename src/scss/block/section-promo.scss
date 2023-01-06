@@ -1,0 +1,33 @@
+.section-promo {
+
+  // .section-promo__wrapper
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // .section-promo__content
+
+  &__content {
+    grid-column: 2 span;
+  }
+
+  // .section-promo__title
+
+  &__title {
+    font-size: rem(40);
+    font-weight: bold;
+  }
+
+  // .section-promo__text
+
+  &__text {
+  }
+
+  // .section-promo__form
+
+  &__form {
+    grid-column: 1 span;
+  }
+}

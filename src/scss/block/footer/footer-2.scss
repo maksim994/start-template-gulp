@@ -1,0 +1,84 @@
+
+$Bg: #FFF; // Фон footer
+$padding: rem(20) 0px; // Общие отсутпы
+
+.footer-2 {
+  display: block;
+  background-color: $Bg;
+  padding: $padding;
+
+  // .footer-2__top-wrapper
+
+  &__top-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start
+  }
+
+  // .footer-2__logo
+
+  &__logo {
+    flex-basis: 30%;
+
+    @media(max-width: $mobile){
+      flex-basis: 45%;
+    }
+  }
+
+  // .footer-2__addres
+
+  &__addres {
+    font-size: 80%;
+    line-height: 1.2;
+  }
+
+  // .footer-2__list
+
+  &__list {
+    flex: 1;
+    margin: 0px rem(40);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media(max-width: $mobile){
+      display: none;
+    }
+  }
+
+  // .footer-2__list-item
+
+  &__list-item {
+  }
+
+  // .footer-2__list-link
+
+  &__list-link {
+  }
+
+  // .footer-2__contact
+
+  &__contact {
+    margin-left: auto;
+  }
+
+  // .footer-2__contact-link
+
+  &__contact-link {
+  }
+
+  // .footer-2__phone
+
+  &__phone {
+  }
+
+  // .footer-2__email
+
+  &__email {
+  }
+
+  // .footer-2__btn
+
+  &__btn {
+    margin-top: rem(10);
+  }
+}
