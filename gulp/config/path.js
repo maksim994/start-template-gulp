@@ -13,6 +13,7 @@ export const path = {
 		images: `${buildFolder}/assets/img/`,
 		fonts: `${buildFolder}/assets/fonts/`,
 		files: `${buildFolder}/assets/files/`,
+		video: `${buildFolder}/assets/video/`,
 		system: `${buildFolder}/`
 	},
 	src: {
@@ -22,6 +23,7 @@ export const path = {
 		scss: `${srcFolder}/scss/*.scss`,
 		html: `${srcFolder}/*.*`,
 		system: `${srcFolder}/resources/**/*.*`,
+		video: `${srcFolder}/video/**/*.*`,
 		files: `${srcFolder}/files/**/*.*`,
 		svgicons: `${srcFolder}/svgicons/*.svg`,
 	},
@@ -31,6 +33,7 @@ export const path = {
 		html: `${srcFolder}/**/*.{php,html}`,
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
 		files: `${srcFolder}/files/**/*.*`,
+		video: `${srcFolder}/video/**/*.*`,
 		system: `${srcFolder}/resources/**/*.*`,
 		svgicons: `${srcFolder}/svgicons/*.*`
 	},

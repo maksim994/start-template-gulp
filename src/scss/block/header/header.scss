@@ -20,6 +20,7 @@
   // .header__list
 
   &__list {
+    margin: 0px 30px;
   }
 
   // .header__list-item
@@ -34,6 +35,8 @@
   // .header__list-link
 
   &__list-link {
+    display: block;
+    text-align: center;
   }
 
   // .header__contact
@@ -51,6 +54,7 @@
   // .header__contact-link
 
   &__contact-link {
+    white-space: nowrap;
   }
 
   // .header__phone

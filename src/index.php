@@ -33,12 +33,12 @@
 		
 
 		<div class="wrapper">
-			@@include('partials/block/tabs.html')
-			@@include('partials/block/accordion.html')
+			<!-- @@include('partials/block/tabs.html') -->
+			<!-- @@include('partials/block/accordion.html') -->
 			<?php //form('qwiz', 'qwiz');?>
 		</div>
 
-		@@include('partials/block/advantages/advantages-1.html')
+		<!-- @@include('partials/block/advantages/advantages-1.html') -->
 		
 
 		<!-- @@include('partials/section-promo.php') -->
