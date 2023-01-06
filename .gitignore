@@ -14,3 +14,4 @@ node_modules
 package-lock.json
 .sass-cache
 
+.stylelintrc.json
