@@ -1,0 +1,87 @@
+$mainTitleMargins: 35px 0 60px 0;
+$cardsGapRow: 40px;
+$cardsGapCol: 50px;
+$cardsColor: inherit;
+$inCardSpacing: 10px 20px;
+$cardsInRow: 4;
+$iconsBgColor: inherit;
+$highlightedText: #F9730E;
+$iconsBorder: 10px;
+$iconWidth: 50px;
+$iconsColor: black;
+$cardsBoxShadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+$cardsPadding: 10px 20px;
+
+.advantages-6 {
+    position: relative;
+    text-align: center;
+
+    &__title {
+        font-weight: bold;
+        font-size: $fontSizeTitle;
+        margin: $mainTitleMargins;
+
+        @media (max-width: 370px) {
+            font-size: 2.6rem;
+        }
+    }
+
+    &__cards-container {
+        display: grid;
+        grid-template-columns: repeat($cardsInRow, 1fr);
+        gap: $cardsGapRow $cardsGapCol;
+        justify-items: center; 
+        justify-content: center;
+
+        @media (max-width: $pc) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__card {
+        text-align: left;
+        background-color: $cardsColor;
+        padding: $cardsPadding;
+        display: grid;
+        gap: $inCardSpacing;
+        grid-template-areas: 
+        'icon title title'
+        'text text text';
+        grid-template-columns: minmax(min-content, 50px) 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+
+        &-title {
+            font-size: calc($fontSize + 0.4rem);
+            grid-area: title;
+            margin: unset;
+        }
+
+        &-text {
+            font-size: $fontSize;
+            grid-area: text;
+        }
+
+        &-icon {
+            background: $iconsColor;
+            max-width: unset;
+            grid-area: icon;
+        }
+    }
+
+    &__icon-container {
+        width: fit-content;
+        background: $iconsBgColor;
+        border-radius: $iconsBorder;
+    }
+}

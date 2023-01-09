@@ -4,13 +4,17 @@ $cardsGapCol: 20px;
 $cardsColor: #fff;
 $cardsBoxShadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
 $cardsInRow: 4;
-$mainCardsColor: #1E7FFF;
+$cardsBorder: 5px;
+$mainCardsColor: white;
 $iconsColor: linear-gradient(180deg, #93C2FF 0%, #1E7FFF 80.89%);
-$iconsBorder: 0px 0px 5px 5px;
+$iconsBorder: 50%;
+$iconWidth: 50px;
+$inCardSpacing: 16px;
+$iconsBgColor: white;
 
-.advantages-1 {
+.advantages-8 {
     position: relative;
-    padding-top: 70px;
+    padding-top: 50px;
 
     @media (max-width: $tablet) {
         padding-top: 30px;
@@ -20,18 +24,11 @@ $iconsBorder: 0px 0px 5px 5px;
         padding-top: 10px;
     }
 
-    &__bg {
-        position: absolute;
-        top: 0;
-        z-index: -1;
-        object-fit: cover;
-        object-position: center center;
-        min-height: 400px;
-    }
-
     &__title {
+        text-align: center;
         font-weight: bold;
         font-size: $fontSizeTitle;
+        position: relative;
 
         @media (max-width: 370px) {
             font-size: 2.8rem;
@@ -40,16 +37,15 @@ $iconsBorder: 0px 0px 5px 5px;
         @media (max-width: 370px) {
             font-size: 2.6rem;
         }
-    }
 
-    &__text {
-        font-weight: 300;
-        font-size: $fontSize;
-        line-height: 150%;
-        margin-bottom: 100px;
-
-        @media (max-width: 700px) {
-            margin-bottom: 30px; 
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 40px);
+            width: 80px;
+            height: 4px;
+            background-color: $mainCardsColor;
         }
     }
 
@@ -59,6 +55,10 @@ $iconsBorder: 0px 0px 5px 5px;
         gap: $cardsGapRow $cardsGapCol;
         justify-items: center; 
         justify-content: center;
+
+        @media (max-width: $pc) {
+            grid-template-columns: repeat(3, 1fr);
+        }
 
         @media (max-width: $mobile) {
             grid-template-columns: repeat(2, 1fr);
@@ -72,9 +72,22 @@ $iconsBorder: 0px 0px 5px 5px;
     &__card {
         position: relative;
         text-align: center;
-        padding: 180px 20px 30px 20px;
-        background-color: $cardsColor;
+        padding: 42px 30px 35px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $inCardSpacing;
         box-shadow: $cardsBoxShadow;
+        border-radius: $cardsBorder;
+
+        background: url(https://dummyimage.com/280x250/c7c7c7/ffffff) no-repeat center center;
+        background-size: cover;
+
+        &-title {
+            font-size: calc($fontSize + 0.4rem);
+            margin: unset;
+            margin-top: 16px;
+        }
 
         &-text {
             font-size: $fontSize;
@@ -84,20 +97,18 @@ $iconsBorder: 0px 0px 5px 5px;
             content: '';
             position: absolute;
             bottom: 0;
-            left: calc(50% - 20px);
-            width: 40px;
-            height: 4px;
+            left: calc(50% - 11px);
+            width: 22px;
+            height: 10px;
             background-color: $mainCardsColor;
         }
-
-        &-icon {
-            position: absolute;
-            top: 0;
-            left: calc(50% - 45px);
-            transform: translateY(-10%);
-            padding: 70px 20px 30px 20px;
-            background: $iconsColor;
-            border-radius: $iconsBorder;
-        }
     }
+
+    &__icon-container {
+        border-radius: $iconsBorder;
+        padding: 20px;
+        width: fit-content;
+        background-color: $iconsBgColor;
+    }
+
 }

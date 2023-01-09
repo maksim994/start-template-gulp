@@ -44,6 +44,8 @@
 		<!-- @@include('partials/section-promo.php') -->
 		<!-- @@include('partials/slider.html') -->
 
+		@@include('partials/block/advantages/advantages-8.html')
+
     
 
 		<div id="modal-callback" style="display: none;">
