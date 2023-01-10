@@ -30,6 +30,8 @@
 			"btn-description" : "Главная"
 		})
 
+		@@include('partials/block/section-promo/section-promo-1.php')
+
 		
 
 		<div class="wrapper">
