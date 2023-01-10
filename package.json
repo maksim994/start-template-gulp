@@ -22,7 +22,7 @@
 		"babel-core": "^6.26.3",
 		"babel-preset-env": "^1.7.0",
 		"browser-sync": "latest",
-		"del": "latest",
+		"del": "^6.0.0",
 		"gulp": "latest",
 		"gulp-autoprefixer": "latest",
 		"gulp-babel": "^7.0.1",
