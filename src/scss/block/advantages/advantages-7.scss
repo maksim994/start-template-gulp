@@ -6,17 +6,22 @@ $cardsBoxShadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
 
 $cardsInRow: 4;
 $cardsInRowPc: 3;
-$cardsInRowTablet: 2;
+$cardsInRowTablet: 3;
 $cardsInRowMobile: 2;
 $cardsInRowMobileSmall: 1;
 
-$mainCardsColor: #1E7FFF;
+$cardsBorder: 5px;
+$mainCardsColor: #F9730E;
 $iconsColor: linear-gradient(180deg, #93C2FF 0%, #1E7FFF 80.89%);
-$iconsBorder: 0px 0px 5px 5px;
+$iconsBorder: 50%;
+$iconWidth: 50px;
+$inCardSpacing: 16px;
+$iconsBgColor: #F9730E;
+$iconContainerPadding: 20px;
 
-.advantages-1 {
+.advantages-7 {
     position: relative;
-    padding-top: 70px;
+    padding-top: 50px;
 
     @media (max-width: $tablet) {
         padding-top: 30px;
@@ -27,39 +32,41 @@ $iconsBorder: 0px 0px 5px 5px;
     }
 
     &__bg {
-        //advantages-1__bg
+        //advantages-7__bg
         position: absolute;
         top: 0;
+        left: 0;
+        bottom: 0;
         z-index: -1;
         object-fit: cover;
         object-position: center center;
-        min-height: 400px;
+        min-height: 100%;
     }
 
     &__title {
-        //advantages-1__title
+        //advantages-7__title
+        text-align: center;
         font-weight: bold;
         font-size: $fontSizeTitle;
+        position: relative;
 
         @media (max-width: 370px) {
             font-size: 2.6rem;
         }
-    }
 
-    &__text {
-        //advantages-1__text
-        font-weight: 300;
-        font-size: $fontSize;
-        line-height: 150%;
-        margin-bottom: 100px;
-
-        @media (max-width: 700px) {
-            margin-bottom: 30px; 
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 40px);
+            width: 80px;
+            height: 4px;
+            background-color: $mainCardsColor;
         }
     }
 
     &__cards-container {
-        //advantages-1__cards-container
+        //advantages-7__cards-container
         display: grid;
         grid-template-columns: repeat($cardsInRow, 1fr);
         gap: $cardsGapRow $cardsGapCol;
@@ -84,37 +91,37 @@ $iconsBorder: 0px 0px 5px 5px;
     }
 
     &__card {
-        //advantages-1__card
+        //advantages-7__card
         position: relative;
         text-align: center;
-        padding: 180px 20px 30px 20px;
+        padding: 42px 30px 35px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $inCardSpacing;
         background-color: $cardsColor;
         box-shadow: $cardsBoxShadow;
+        border-radius: $cardsBorder;
+
+        &-title {
+            //advantages-7__card-title
+            font-size: calc($fontSize + 0.4rem);
+            margin: unset;
+            margin-top: 16px;
+        }
 
         &-text {
-            //advantages-1__card-text
+            //advantages-7__card-text
             font-size: $fontSize;
         }
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: calc(50% - 20px);
-            width: 40px;
-            height: 4px;
-            background-color: $mainCardsColor;
-        }
-
-        &-icon {
-            //advantages-1__card-icon
-            position: absolute;
-            top: 0;
-            left: calc(50% - 45px);
-            transform: translateY(-10%);
-            padding: 70px 20px 30px 20px;
-            background: $iconsColor;
-            border-radius: $iconsBorder;
-        }
     }
+
+    &__icon-container {
+        //advantages-7__icon-container
+        border-radius: $iconsBorder;
+        padding: $iconContainerPadding;
+        width: fit-content;
+        background-color: $iconsBgColor;
+    }
+
 }

@@ -1,0 +1,113 @@
+$mainTitleMargins: 35px 0 60px 0;
+$maxCardWidth: 209px;
+$cardsGapRow: 40px;
+$cardsGapCol: 30px;
+$cardsColor: white;
+$inCardSpacing: 10px;
+
+$cardsInRow: 4;
+$cardsInRowPc: 4;
+$cardsInRowTablet: 2;
+$cardsInRowMobile: 2;
+$cardsInRowMobileSmall: 1;
+
+$iconsBgColor: #1E7FFF;
+$iconsBorder: 0px 0px 0px 0px;
+$iconsColor: black;
+$counterColor: #C4C4C4;
+$counterFont: 80px;
+$counterCollision: 20px;
+$iconContainerPadding: 20px;
+
+.advantages-4 {
+    position: relative;
+
+    &__title {
+        //advantages-4__title
+        text-align: center;
+        font-weight: bold;
+        font-size: $fontSizeTitle;
+        margin: $mainTitleMargins;
+
+        @media (max-width: 370px) {
+            font-size: 2.6rem;
+        }
+    }
+
+    &__cards-container {
+        //advantages-4__cards-container
+        display: grid;
+        padding-left: 0;
+        grid-template-columns: repeat($cardsInRow, 1fr);
+        gap: $cardsGapRow $cardsGapCol;
+        justify-items: center; 
+        justify-content: center;
+        counter-reset: container;
+
+        @media (max-width: $pc) {
+            grid-template-columns: repeat($cardsInRowPc, 1fr);
+        }
+
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat($cardsInRowTablet, 1fr);
+        }
+
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat($cardsInRowTablet, 1fr);
+        }
+
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: repeat($cardsInRowMobileSmall, 1fr);
+        }
+    }
+
+    .card-container {
+        //card-container
+        list-style-type: none;
+        position: relative;
+        display: flex;
+
+        &::before {
+            content: counter(container, decimal-leading-zero); 
+            counter-increment: container;
+            transform: rotate(-90deg) translateY($counterCollision);
+            color: $counterColor;
+            font-size: $counterFont;
+            padding: 0;
+            height: fit-content;
+        }
+    }
+
+    &__card {
+        //advantages-4__card
+        position: relative;
+        display: flex;
+        z-index: 2;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0 20px 15px;
+        background-color: $cardsColor;
+        font-size: $fontSize;
+        max-width: $maxCardWidth;
+
+        &-text {
+            //advantages-4__card-text
+            margin-top: $inCardSpacing;
+            font-size: $fontSize;
+        }
+
+        &-icon {
+            //advantages-4__card-icon
+            background: $iconsColor;
+            border-radius: $iconsBorder;
+        }
+    }
+
+    &__icon-container {
+        //advantages-4__icon-container
+        position: relative;
+        padding: $iconContainerPadding;
+        background-color: $iconsBgColor;
+    }
+}
