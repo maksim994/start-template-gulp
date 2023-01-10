@@ -60,6 +60,7 @@ $iconContainerPadding: 20px;
     &__cards-container {
         //advantages-8__cards-container
         display: grid;
+        margin-top: 30px;
         grid-template-columns: repeat($cardsInRow, 1fr);
         gap: $cardsGapRow $cardsGapCol;
         justify-items: center; 

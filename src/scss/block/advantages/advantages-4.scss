@@ -9,7 +9,7 @@ $cardsInRow: 4;
 $cardsInRowPc: 4;
 $cardsInRowTablet: 2;
 $cardsInRowMobile: 2;
-$cardsInRowMobileSmall: 1;
+$cardsInRowMobileSmall: 2;
 
 $iconsBgColor: #1E7FFF;
 $iconsBorder: 0px 0px 0px 0px;
@@ -67,6 +67,10 @@ $iconContainerPadding: 20px;
         position: relative;
         display: flex;
 
+        // @media (max-width: $tablet) {
+        //     display: block;
+        // }
+
         &::before {
             content: counter(container, decimal-leading-zero); 
             counter-increment: container;
@@ -75,6 +79,20 @@ $iconContainerPadding: 20px;
             font-size: $counterFont;
             padding: 0;
             height: fit-content;
+
+            @media (max-width: $tablet) {
+                transform: rotate(0) translateX(110px);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            @media (max-width: $mobileSmall) {
+                transform: rotate(0) translateX(30px) translateY(50%);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
     }
 
@@ -90,6 +108,10 @@ $iconContainerPadding: 20px;
         background-color: $cardsColor;
         font-size: $fontSize;
         max-width: $maxCardWidth;
+
+        @media (max-width: $tablet) {
+            background-color: inherit;
+        }
 
         &-text {
             //advantages-4__card-text

@@ -15,3 +15,4 @@ package-lock.json
 .sass-cache
 
 .stylelintrc.json
+gulp/tasks/server.js

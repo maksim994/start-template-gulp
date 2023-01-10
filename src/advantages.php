@@ -31,7 +31,7 @@
 		})
 
 	
-    <div style="margin-bottom: 20px;">
+    <!-- <div style="margin-bottom: 20px;">
 		@@include('partials/block/advantages/advantages-1.html')
     </div>
     <div style="margin-bottom: 20px;">
@@ -39,11 +39,11 @@
     </div>
     <div style="margin-bottom: 20px;">
     @@include('partials/block/advantages/advantages-3.html')
-    </div>
+    </div> -->
     <div style="margin-bottom: 20px;">
     @@include('partials/block/advantages/advantages-4.html')
     </div>
-    <div style="margin-bottom: 20px;">
+    <!-- <div style="margin-bottom: 20px;">
     @@include('partials/block/advantages/advantages-5.html')
     </div>
     <div style="margin-bottom: 20px;">
@@ -60,7 +60,7 @@
     </div>
     <div style="margin-bottom: 20px;">
     @@include('partials/block/advantages/advantages-10.html')
-    </div>
+    </div> -->
 
 		<script src="./assets/js/vendor.js"></script>
 		<script src="./assets/js/main.js"></script>
