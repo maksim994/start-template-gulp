@@ -3,7 +3,13 @@ $cardsGapRow: 40px;
 $cardsGapCol: 20px;
 $cardsColor: #fff;
 $cardsBoxShadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+
 $cardsInRow: 4;
+$cardsInRowPc: 3;
+$cardsInRowTablet: 2;
+$cardsInRowMobile: 2;
+$cardsInRowMobileSmall: 1;
+
 $mainCardsColor: #1E7FFF;
 $iconsColor: linear-gradient(180deg, #93C2FF 0%, #1E7FFF 80.89%);
 $iconsBorder: 0px 0px 5px 5px;
@@ -21,6 +27,7 @@ $iconsBorder: 0px 0px 5px 5px;
     }
 
     &__bg {
+        //advantages-1__bg
         position: absolute;
         top: 0;
         z-index: -1;
@@ -30,12 +37,9 @@ $iconsBorder: 0px 0px 5px 5px;
     }
 
     &__title {
+        //advantages-1__title
         font-weight: bold;
         font-size: $fontSizeTitle;
-
-        @media (max-width: 370px) {
-            font-size: 2.8rem;
-        }
 
         @media (max-width: 370px) {
             font-size: 2.6rem;
@@ -43,6 +47,7 @@ $iconsBorder: 0px 0px 5px 5px;
     }
 
     &__text {
+        //advantages-1__text
         font-weight: 300;
         font-size: $fontSize;
         line-height: 150%;
@@ -54,22 +59,32 @@ $iconsBorder: 0px 0px 5px 5px;
     }
 
     &__cards-container {
+        //advantages-1__cards-container
         display: grid;
         grid-template-columns: repeat($cardsInRow, 1fr);
         gap: $cardsGapRow $cardsGapCol;
         justify-items: center; 
         justify-content: center;
 
+        @media (max-width: $pc) {
+            grid-template-columns: repeat($cardsInRowPc, 1fr);
+        }
+
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat($cardsInRowTablet, 1fr);
+        }
+
         @media (max-width: $mobile) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat($cardsInRowTablet, 1fr);
         }
 
         @media (max-width: $mobileSmall) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat($cardsInRowMobileSmall, 1fr);
         }
     }
 
     &__card {
+        //advantages-1__card
         position: relative;
         text-align: center;
         padding: 180px 20px 30px 20px;
@@ -77,6 +92,7 @@ $iconsBorder: 0px 0px 5px 5px;
         box-shadow: $cardsBoxShadow;
 
         &-text {
+            //advantages-1__card-text
             font-size: $fontSize;
         }
 
@@ -91,6 +107,7 @@ $iconsBorder: 0px 0px 5px 5px;
         }
 
         &-icon {
+            //advantages-1__card-icon
             position: absolute;
             top: 0;
             left: calc(50% - 45px);

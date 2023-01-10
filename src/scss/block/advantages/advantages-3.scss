@@ -3,7 +3,13 @@ $cardsGapRow: 40px;
 $cardsGapCol: 20px;
 $cardsColor: inherit;
 $inCardSpacing: 30px;
+
 $cardsInRow: 4;
+$cardsInRowPc: 3;
+$cardsInRowTablet: 2;
+$cardsInRowMobile: 2;
+$cardsInRowMobileSmall: 1;
+
 $iconsBgColor: #F9730E;
 $highlightedText: #F9730E;
 $iconsBorder: 0px 0px 0px 0px;
@@ -15,6 +21,7 @@ $iconsColor: black;
     text-align: center;
 
     &__title {
+        //advantages-3__title
         font-weight: bold;
         font-size: $fontSizeTitle;
         margin: $mainTitleMargins;
@@ -25,27 +32,38 @@ $iconsColor: black;
     }
 
     &__cards-container {
+        //advantages-3__cards-container
         display: grid;
         grid-template-columns: repeat($cardsInRow, 1fr);
         gap: $cardsGapRow $cardsGapCol;
         justify-items: center; 
         justify-content: center;
 
+        @media (max-width: $pc) {
+            grid-template-columns: repeat($cardsInRowPc, 1fr);
+        }
+
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat($cardsInRowTablet, 1fr);
+        }
+
         @media (max-width: $mobile) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat($cardsInRowTablet, 1fr);
         }
 
         @media (max-width: $mobileSmall) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat($cardsInRowMobileSmall, 1fr);
         }
     }
 
     &__card {
+        //advantages-3__card
         text-align: center;
         padding: 30px 20px;
         background-color: $cardsColor;
 
         &-text {
+            //advantages-3__card-text
             margin-top: $inCardSpacing;
             font-size: $fontSize;
 
@@ -55,12 +73,14 @@ $iconsColor: black;
         }
 
         &-icon {
+            //advantages-3__card-icon
             background: $iconsColor;
             border-radius: $iconsBorder;
         }
     }
 
     &__icon-container {
+        //advantages-3__icon-container
         position: relative;
         
         &::before {

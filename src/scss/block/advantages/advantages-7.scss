@@ -3,7 +3,13 @@ $cardsGapRow: 40px;
 $cardsGapCol: 20px;
 $cardsColor: #fff;
 $cardsBoxShadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+
 $cardsInRow: 4;
+$cardsInRowPc: 3;
+$cardsInRowTablet: 3;
+$cardsInRowMobile: 2;
+$cardsInRowMobileSmall: 1;
+
 $cardsBorder: 5px;
 $mainCardsColor: #F9730E;
 $iconsColor: linear-gradient(180deg, #93C2FF 0%, #1E7FFF 80.89%);
@@ -11,6 +17,7 @@ $iconsBorder: 50%;
 $iconWidth: 50px;
 $inCardSpacing: 16px;
 $iconsBgColor: #F9730E;
+$iconContainerPadding: 20px;
 
 .advantages-7 {
     position: relative;
@@ -25,6 +32,7 @@ $iconsBgColor: #F9730E;
     }
 
     &__bg {
+        //advantages-7__bg
         position: absolute;
         top: 0;
         left: 0;
@@ -36,14 +44,11 @@ $iconsBgColor: #F9730E;
     }
 
     &__title {
+        //advantages-7__title
         text-align: center;
         font-weight: bold;
         font-size: $fontSizeTitle;
         position: relative;
-
-        @media (max-width: 370px) {
-            font-size: 2.8rem;
-        }
 
         @media (max-width: 370px) {
             font-size: 2.6rem;
@@ -61,6 +66,7 @@ $iconsBgColor: #F9730E;
     }
 
     &__cards-container {
+        //advantages-7__cards-container
         display: grid;
         grid-template-columns: repeat($cardsInRow, 1fr);
         gap: $cardsGapRow $cardsGapCol;
@@ -68,19 +74,24 @@ $iconsBgColor: #F9730E;
         justify-content: center;
 
         @media (max-width: $pc) {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat($cardsInRowPc, 1fr);
+        }
+
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat($cardsInRowTablet, 1fr);
         }
 
         @media (max-width: $mobile) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat($cardsInRowTablet, 1fr);
         }
 
         @media (max-width: $mobileSmall) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat($cardsInRowMobileSmall, 1fr);
         }
     }
 
     &__card {
+        //advantages-7__card
         position: relative;
         text-align: center;
         padding: 42px 30px 35px 30px;
@@ -93,19 +104,22 @@ $iconsBgColor: #F9730E;
         border-radius: $cardsBorder;
 
         &-title {
+            //advantages-7__card-title
             font-size: calc($fontSize + 0.4rem);
             margin: unset;
             margin-top: 16px;
         }
 
         &-text {
+            //advantages-7__card-text
             font-size: $fontSize;
         }
     }
 
     &__icon-container {
+        //advantages-7__icon-container
         border-radius: $iconsBorder;
-        padding: 20px;
+        padding: $iconContainerPadding;
         width: fit-content;
         background-color: $iconsBgColor;
     }

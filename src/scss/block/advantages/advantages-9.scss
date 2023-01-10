@@ -1,21 +1,29 @@
 $mainTitleMargins: 35px 0 60px 0;
 $maxCardWidth: 209px;
-$cardsGapRow: 40px;
+$cardsGapRow: 80px;
 $cardsGapCol: 40px;
 $cardsColor: inherit;
 $inCardSpacing: 40px;
+
 $cardsInRow: 4;
+$cardsInRowPc: 3;
+$cardsInRowTablet: 2;
+$cardsInRowMobile: 2;
+$cardsInRowMobileSmall: 1;
+
 $iconsBgColor: inherit;
 $iconsBorder: 10px solid #0095D4;
 $iconsColor: black;
 $counterColor: #C4C4C4;
 $counterFont: 130px;
 $counterCollision: 20px;
+$iconContainerPadding: 5px;
 
 .advantages-9 {
     position: relative;
 
     &__title {
+        //advantages-9__title
         text-align: center;
         font-weight: bold;
         font-size: $fontSizeTitle;
@@ -27,6 +35,7 @@ $counterCollision: 20px;
     }
 
     &__cards-container {
+        //advantages-9__cards-container
         display: grid;
         padding-left: 0;
         grid-template-columns: repeat($cardsInRow, 1fr);
@@ -36,30 +45,31 @@ $counterCollision: 20px;
         counter-reset: container;
 
         @media (max-width: $pc) {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat($cardsInRowPc, 1fr);
         }
 
         @media (max-width: $tablet) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat($cardsInRowTablet, 1fr);
         }
 
         @media (max-width: $mobile) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat($cardsInRowTablet, 1fr);
         }
 
         @media (max-width: $mobileSmall) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat($cardsInRowMobileSmall, 1fr);
         }
     }
 
     .card-container {
+        //card-container
         list-style-type: none;
         position: relative;
 
         &::before {
             position: absolute;
-            top: -90%;
-            left: -15%;
+            top: -100px;
+            left: -25px;
             opacity: 0.5;
             content: counter(container, decimal-leading-zero); 
             counter-increment: container;
@@ -75,6 +85,7 @@ $counterCollision: 20px;
     }
 
     &__card {
+        //advantages-9__card
         position: relative;
         display: flex;
         z-index: 2;
@@ -84,10 +95,12 @@ $counterCollision: 20px;
         font-size: $fontSize;
 
         &-text {
+            //advantages-9__card-text
             font-size: $fontSize;
         }
 
         &-icon {
+            //advantages-9__card-icon
             background: $iconsColor;
             border-radius: $iconsBorder;
             max-width: unset;
@@ -96,8 +109,9 @@ $counterCollision: 20px;
     }
 
     &__icon-container {
+        //advantages-9__icon-container
         position: relative;
-        padding: 5px;
+        padding: $iconContainerPadding;
         background-color: $iconsBgColor;
         border: $iconsBorder;
     }

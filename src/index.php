@@ -44,7 +44,7 @@
 		<!-- @@include('partials/section-promo.php') -->
 		<!-- @@include('partials/slider.html') -->
 
-		@@include('partials/block/advantages/advantages-9.html')
+		@@include('partials/block/advantages/advantages-1.html')
 
     
 
