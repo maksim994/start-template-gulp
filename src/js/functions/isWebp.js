@@ -13,3 +13,4 @@ function isWebp() {
 		document.documentElement.classList.add(className);
 	});
 }
+isWebp();
