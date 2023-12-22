@@ -1,0 +1,167 @@
+.header{
+  background-color: #FEFCFB;
+  padding: 20px 0px;
+
+  @media(max-width: $mobile){
+    display: none;
+  }
+
+  //.header__wrapper 
+  &__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // .header__list
+
+  &__list {
+    // flex: 1;
+
+    // .header__list-item
+    &-item{
+      &:not(:last-child){
+        margin-right: 20px;
+
+        @media(max-width: $tablet){
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  // .header__logo
+
+  &__logo{
+    margin-left: 0;
+    width: 240px;
+
+    @media (max-width: $small-pc) {
+      width: 170px;
+    }
+
+    @media (max-width: em(1024.89)) {
+      width: 170px;
+    }
+
+
+
+    @media(max-width: $tablet){
+      width: inherit;
+      margin-right: 30px;
+    }
+
+    img{
+      max-width: 200px;
+
+      @media (max-width: em(1100.89)) {
+        width: 180px;
+      }
+
+      @media (max-width: em(1024.89)) {
+        width: 120px;
+      }
+
+      @media(max-width: $tablet){
+        width: 160px;
+      }
+    }
+  }
+
+  // .header__list
+  &__list{
+
+    @media (max-width: em(1024.89)) {
+      display: none !important
+    }
+  }
+
+  // .header__list-link
+
+  &__list-link {
+    transition: all .3s;
+    text-align: center;
+    display: block;
+    &:hover{
+      color: var(--primary);
+    }
+
+    // .header__list-link--where-buy
+    &--where-buy{
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--primary);
+      &:hover{
+        background-color: transparent;
+      }
+    }
+  }
+
+  // .header__phone
+  &__phone{
+    text-align: right;
+    
+    a{
+      display: block;
+    }
+    
+  }
+
+  // .header__phone-link
+  &__phone-link{
+    font-size: 20px;
+    transition: all .3s;
+    font-weight: 500;
+
+    &:hover{
+      color: var(--primary)
+    }
+
+
+    @media (max-width: em(1024.89)) {
+      font-size: 18px;
+    }
+  }
+
+  // .header__form-link
+  &__form-link{
+    position: relative;
+    transition: all .3s;
+    color: var(--primary);
+
+    // &:hover{
+    //   color: var(--primary)
+    // }
+
+    &:before{
+      content: '';
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      border-bottom: 1px dotted;
+      color: var(--primary)
+    }
+
+    
+  }
+
+  &-clone{
+    position: fixed;
+    top: -10rem;
+    left: 0;
+    right: 0;
+    transition: 0.5s;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 28%);
+    padding: 15px 0px;
+
+
+    // .header__logo{
+    //   img{
+    //     max-width: 170px;
+    //   }
+    // }
+
+
+  }
+}

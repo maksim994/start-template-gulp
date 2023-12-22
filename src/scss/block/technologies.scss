@@ -1,0 +1,257 @@
+.technologies {
+  margin-top: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+  position: relative;
+
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+
+  // border: 1px solid var(--grey);
+
+  // .technologies__section
+
+  &__section {
+  }
+
+  // .technologies__inner{
+  &__inner{
+
+  }
+
+  // .technologies__left
+  &__left {
+    position: relative;
+    order: 1;
+    max-height: 500px;
+    position: sticky;
+    top: 80px;
+    left: 0px;
+
+    picture{
+      transition: all .3s;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+
+      background-color: var(--grey);
+
+
+      img{
+        transition: all .3s;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      &[data-technologies-images='1']{
+        img{
+          object-position: bottom left;
+        }
+      }
+
+      &[data-technologies-images='3']{
+        img{
+          object-position: bottom left;
+        }
+      }
+
+      &.active{
+        opacity: 1;
+      }
+    }
+  }
+
+  &__images{
+    // position: relative;
+    // width: 100%;
+    // height: 100%;
+  }
+
+  // .technologies__content
+
+  &__content {
+    // padding: 10px 0px;
+  }
+
+  // .technologies__item
+
+  &__item {
+    border: 1px solid var(--grey);
+    
+    border-radius: var(--btn-radius);
+    // transition: all .3s;
+    cursor: pointer;
+    background-color: #fff;
+
+    &:not(:last-child){
+      margin-bottom: 10px;
+    }
+
+    &.open{
+      // background-color: var(--primary);
+      // border-color: var(--primary);
+      // color: #FFF;
+
+      .technologies__question,
+      .technologies__circle{
+        background-color: var(--primary);
+      }
+
+      .technologies__icons{
+        transform: rotate(45deg);
+        &::after,
+        &::before{
+          background-color: var(--primary);
+        }
+      }
+
+      .technologies__content{
+        border-top: 1px solid var(--grey);
+        padding-top: 20px;
+        opacity: 1;
+      }
+    }
+
+  }
+
+  // .technologies__control
+  &__control{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+
+  // .technologies__icons
+  &__icons{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    transition: transform 0.3s ease-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 65%;
+      height: 2px;
+      background-color: var(--primary);
+      transform: translate(-50%, -50%);
+    }
+    
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 2px;
+      height: 65%;
+      background-color: var(--primary);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // .technologies__content
+  &__content{
+    padding-left: 30px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    padding-left: 45px;
+    will-change: max-height;
+    transition: all 0.3s ease-out;
+    box-sizing: content-box;
+  }
+
+
+
+  // .technologies__circle
+  &__circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: var(--grey);
+    margin-right: 15px;
+  }
+
+  // .technologies__title
+
+  &__title {
+    flex: 1;
+    flex-grow: 1;
+    line-height: 1.2;
+  }
+
+  // .technologies__question
+
+  &__question {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--grey);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-left: 15px;
+  }
+}
+
+
+.technologies-mobile {
+  background-color: #fff;
+
+  // .technologies-mobile__slider
+  &__slider{
+    margin-top: 40px;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    @media (min-width: $mobile) {
+      display: none;
+    }
+  }
+
+  // .technologies-mobile__images
+  &__images {
+    height: 250px;
+
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // .technologies-mobile__content
+  &__content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  // .technologies-mobile__title
+  &__title {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  // .technologies-mobile__text
+  &__text {
+    font-size: 80%;
+  }
+}

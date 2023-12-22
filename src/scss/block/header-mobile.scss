@@ -1,0 +1,158 @@
+$bgColor: #FFF;
+$bgColorBurger: var(--primary);
+$bgColorIocns: var(--primary);
+$colorLink: #000711;
+
+
+@media(min-width: $mobile){
+  .wpar-fixed{
+    display: none;
+  }
+}
+
+.header-mobile{
+  padding: rem(10) 0px;
+  background-color: $bgColor;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 28%);
+
+  &.is-fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    top: 0 !important;
+  }
+
+  @media(min-width: $mobile){
+    display: none;
+  }
+
+  // .header-mobile__where-buy
+  &__where-buy{
+    margin-left: auto;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  // .header-mobile__logo
+  &__logo{
+    img{
+      max-height: 40px;
+    }
+    margin-right: 10px;
+  }
+
+  // .header-mobile__logo--descriptor
+  &__logo--descriptor{
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--primary);
+    text-transform: uppercase;
+
+    @media(max-width: 370px){
+      font-size: 80%;
+    }
+  }
+
+  &__burger{
+    
+    &-menu{
+      width: rem(30);
+      height: rem(20);
+      position: relative;
+      cursor: pointer;
+      margin-right: rem(20);
+
+      &.active{
+        .header-mobile__burger-middle{
+          display: none;
+        }
+        .header-mobile__burger-top{
+          transform: translateY(-50%) rotate(-45deg);
+        }
+
+        .header-mobile__burger-bottom{
+          transform: translateY(-50%) rotate(45deg);
+        }
+
+        .header-mobile__burger-top,
+        .header-mobile__burger-bottom{
+          top: 50%;
+        }
+      }
+    }
+
+    &-top{
+      top: 0px;
+    }
+
+    &-middle{
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-bottom{
+      bottom: 0px;
+    }
+
+    &--global{
+      display: block;
+      height: rem(2);
+      width: 100%;
+      background-color: $bgColorBurger;
+      border-radius: rem(3);
+      position: absolute;
+      transition: all .3s;
+    }
+
+    
+  }
+
+  &__contact{
+    margin-left: auto;
+    // display: flex;
+    // align-items: center;
+
+    &-item{
+      position: relative;
+
+      a{
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        font-size: 0px;
+      }
+
+      svg{
+        fill: $bgColorIocns;
+      }
+
+      &:not(:last-child){
+        margin-right: rem(20);
+      }
+    }
+  }
+
+  &-menu{
+    list-style: none;
+    margin: rem(20) 0px;
+    padding: 0px;
+
+    li{
+      margin-bottom: rem(10);
+      &:last-child{
+        margin-bottom: 0px;
+      }
+    } 
+
+    a{
+      color: $colorLink;
+      text-decoration: none;
+    }
+  }
+
+}
+

@@ -1,0 +1,163 @@
+.technologies {
+  margin-top: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+
+  // border: 1px solid var(--grey);
+
+  // .technologies__section
+
+  &__section {
+  }
+
+  // .technologies__left
+
+  &__left {
+    position: relative;
+    order: 1;
+
+    picture{
+      transition: all .3s;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+
+      background-color: var(--grey);
+
+
+      img{
+        transition: all .3s;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      &.active{
+        opacity: 1;
+      }
+    }
+  }
+
+  // .technologies__content
+
+  &__content {
+    // padding: 10px 0px;
+  }
+
+  // .technologies__item
+
+  &__item {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--grey);
+    padding: 20px;
+    border-radius: var(--btn-radius);
+    transition: all .3s;
+    cursor: pointer;
+    background-color: #fff;
+
+    &:not(:last-child){
+      margin-bottom: 10px;
+    }
+
+    &.active{
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: #FFF;
+
+      .technologies__question,
+      .technologies__circle{
+        background-color: #333;
+      }
+    }
+
+  }
+
+  // .technologies__circle
+
+  &__circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: var(--grey);
+    margin-right: 15px;
+  }
+
+  // .technologies__title
+
+  &__title {
+    flex: 1;
+    flex-grow: 1;
+    line-height: 1.2;
+  }
+
+  // .technologies__question
+
+  &__question {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--grey);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-left: 15px;
+  }
+}
+
+
+.technologies-mobile {
+  background-color: #fff;
+
+  // .technologies-mobile__slider
+  &__slider{
+    margin-top: 40px;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    @media (min-width: $mobile) {
+      display: none;
+    }
+  }
+
+  // .technologies-mobile__images
+  &__images {
+    height: 250px;
+
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // .technologies-mobile__content
+  &__content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  // .technologies-mobile__title
+  &__title {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  // .technologies-mobile__text
+  &__text {
+    font-size: 80%;
+  }
+}

@@ -1,53 +1,25 @@
 <div class="header header-clone is-clone">
     <div class="wrapper">
-        <div class="d-flex align-items-center justify-content-between">
-            
+        <div class="header__wrapper">
             <div class="header__logo">
-                <img src="./assets/img/logo.svg" alt="">
+                @@include('../element/logo.html')
             </div>
-
-            <div class="header__menu">
-                <ul class="header__list list-reset d-flex align-items-center justify-content-between">
-                    <?php foreach($aMenuLinks as $menuItem): ?>
-                    <li class="header__list-item"><a href="<?php echo $menuItem[1];?>" class="header__list-link"><?php echo $menuItem[0]?></a></li>
-                    <?php endforeach;?>
-                </ul>
-            </div>
-
-            <div class="header__contact d-flex align-items-center">
-                <?php if ( !empty($phone_site) || !empty($email_site) ) :?>
-                <div class="d-flex flex-column align-items-end header__contact-inner">
-                    <?php if ( !empty($phone_site) ) :?>
-                        <a 
-                            href="tel:<?php echo $phone_site; ?>" 
-                            class="header__contact-link header__phone callibri_phone" 
-                            onclick="ym(<?php echo $ymCounter;?>, 'reachGoal', 'click_phone', {'place': 'header-scroll'}); return true;"
-                        >
-                            <?php echo $phone_site; ?>
+            <ul class="header__list list-reset d-flex align-items-center justify-content-between">
+                <?php foreach ($aMenuLinks as $menuItem){ ?>
+                
+                    <li class="header__list-item">
+                        <a href="<?php echo $menuItem[1];?>" class="header__list-link  <?php if($menuItem[2]) {echo $menuItem[2];} ?>">
+                            <?php echo $menuItem[0]?>
                         </a>
-                    <?php endif; ?>
-
-                    <?php if ( !empty($email_site) ) :?>
-                        <a 
-                            href="mailto:<?php echo $email_site; ?>"
-                            class="header__contact-link header__email"
-                            onclick="ym(<?php echo $ymCounter;?>, 'reachGoal', 'click_email', {'place': 'header-scroll'}); return true;"
-                        >
-                            <?php echo $email_site; ?>
-                        </a>
-                    <?php endif; ?>
+                    </li>
+                <?php } ?>
+            </ul>
+            <?php if (isset($phone)): ?>
+                <div class="header__phone">
+                    <a href="tel:<?php echo $phone;?>" class="header__phone-link"><?php echo $phone;?></a>
+                    <a href="#modal-callback" class="header__form-link lk-btn--js" data-fancybox="" data-description="Заказать расчет">Получить консультацию</a>
                 </div>
-                <?php endif; ?>
-                <div class="header__btn">
-                    <a 
-                        href="#modal-callback" 
-                        data-fancybox="" 
-                        class="lk-btn--js btn"
-                        data-description="@@btn-description"
-                    >@@btn</a>
-                </div>
-            </div>
-  
+            <?php endif; ?>
         </div>
     </div>
 </div>

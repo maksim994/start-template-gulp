@@ -1,7 +1,7 @@
 {
-    "title": "Хотите сделать визуализацию вашего помещения? <span>Напиши нам!</span>",
+    "title": "Задать вопрос",
     "desc": "",
-    "btn": "Получить консультацию",
+    "btn": "Отправить",
     "fields": {
         "name": {
             "type": "text",
@@ -15,17 +15,17 @@
             "label": "Ваш номер*",
             "required": true
         },
-
         "email": {
             "type": "email",
-            "placeholder": "Ваше E-mail",
-            "label": "Ваше E-mail*",
-            "required": false
+            "placeholder": "Ваш Email",
+            "label": "Ваш Email*",
+            "required": true
         },
+
         "comment": {
             "type": "textarea",
-            "placeholder": "Размеры, выбранная коллекция и описание",
-            "label": "Дополнительная информация",
+            "placeholder": "Ваш вопрос",
+            "label": "Ваш вопрос",
             "required": false
         },
 
@@ -33,5 +33,5 @@
             "type": "hidden"
         }
     },
-    "goal": "formFooter"
+    "goal": "formModal"
 }

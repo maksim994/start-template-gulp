@@ -24,17 +24,21 @@
 
                 switch ($type) {
                     case 'file': ?>
-                        <div class="<?=$com;?>__item <?php echo $com.'__'.$type;?>" >
-                            <label class="<?=$com;?>__label-foto"><?=$options["label"]; ?></label>
-                            <input type="<?=$type;?>" name="<?=$name;?>" id="<?=$name;?>" class="<?=$input_class;?>" placeholder="<?=$options["placeholder"];?>" readonly <?=$required;?>>
-                        </div>
+                        <label class="<?=$com;?>__label-foto">
+                            <input type="<?=$type;?>" name="<?=$name;?>" id="js-<?=$name;?>" class="<?=$input_class;?>" placeholder="<?=$options["placeholder"];?>" readonly <?=$required;?>>
+                            Загрузить файл
+                        </label>
                     <?php break;
 
                     case 'textarea': ?>
-                        <div class="<?=$com;?>__item <?php echo $com.'__'.$type;?>" >
-                            <label class="<?=$com;?>__label-foto"><?=$options["label"]; ?></label>
-                            <textarea type="<?=$type;?>" name="<?=$name;?>" id="<?=$name;?>" class="<?=$input_class;?>" placeholder="<?=$options["placeholder"];?>" <?=$required;?>></textarea>
-                        </div>
+                     <div class="<?=$com;?>__item">
+                        <?php if ( isset($options["label"]) ) { ?>
+                            <label for="<?=$goal.'-'.$name;?>" class="<?=$com;?>__label"><?=$options["label"]; ?></label>
+                        <?php } ?>
+                        
+                        <textarea type="<?=$type;?>" name="<?=$name;?>" id="<?=$name;?>" class="<?=$input_class;?>" placeholder="<?=$options["placeholder"];?>" <?=$required;?>></textarea>
+                        
+                     </div>
                     <?php break;
 
                     case 'checkbox': ?>
@@ -59,7 +63,11 @@
                         
                     default: ?>
                     <div class="<?=$com;?>__item">
-                        
+
+                        <?php if ( isset($options["label"]) ) { ?>
+                            <label for="<?=$goal.'-'.$name;?>" class="<?=$com;?>__label"><?=$options["label"]; ?></label>
+                        <?php } ?>
+
                         <input 
                             type="<?=$type;?>" 
                             name="<?=$name;?>" 
@@ -68,10 +76,6 @@
                             class="<?=$input_class;?>" 
                             placeholder="<?=$options["placeholder"];?>" <?=$required;?>
                         >
-
-                        <?php if ( isset($options["label"]) ) { ?>
-                            <label for="<?=$goal.'-'.$name;?>" class="<?=$com;?>__label"><?=$options["label"]; ?></label>
-                        <?php } ?>
                     
                     </div>
                     <?php break;

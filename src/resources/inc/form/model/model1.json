@@ -1,7 +1,7 @@
 {
-    "title": "Получить консультацию по продукции",
+    "title": "Узнайте сколько должен стоить ваш проект!",
     "desc": "",
-    "btn": "Получить консультацию",
+    "btn": "Расчет в течение дня бесплатно!",
     "fields": {
         "name": {
             "type": "text",
@@ -15,21 +15,6 @@
             "label": "Ваш номер*",
             "required": true
         },
-
-        "files": {
-            "type": "file",
-            "placeholder": "",
-            "label": "Ваш файл*",
-            "required": true
-        },
-
-        "comment": {
-            "type": "textarea",
-            "placeholder": "",
-            "label": "Комментарий*",
-            "required": true
-        },
-        
         "description": {
             "type": "hidden"
         }

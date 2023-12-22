@@ -1,7 +1,41 @@
 @use "sass:math";
 
 //Подключение шрифтов
-// @import "fonts";
+@import "fonts";
+
+:root{
+  --mv-font-sans-serif: 'Exo 2', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --fs-text: 16px;
+  --mv-body-color: #000711;
+
+  --fs-section-title: 48px;
+  --fs-section-title-small-pc: 45px;
+  --fs-section-title-table: 40px;
+  --fs-section-title-mobile: 28px;
+  --fs-section-title-small: 22px;
+
+  --mv-section-color: #333;
+  
+  --mv-section-padding: 100px;
+  --mv-section-padding-small-pc: 60px;
+  --mv-section-padding-table: 40px;
+  --mv-section-padding-mobile: 22px;
+  --mv-section-padding-small: 18px;
+
+  --primary: #FA7436;;
+  --primary-light: #6fc5ff;
+  --primary-secondry: #FE0307;
+
+  --swiper-theme-color: var(--primary);
+  --swiper-navigation-size: 20px;
+  
+  --blue: #005FB7;
+
+  --grey: #D8D6D6;
+
+  --btn-radius: 5px;
+  --gap: 20px;
+}
 
 // Подключение миксинов 
 @import "base/mixins";
@@ -9,41 +43,34 @@
 @import "setings";
 @import "base/base";
 
-@import "block/header/header";
-@import "block/header/header-mobile";
-
+@import "block/header";
+@import "block/header-mobile";
 @import "block/section-promo";
+@import "block/application";
+@import "block/advantages";
+@import "block/selection";
+@import "block/technologies";
+@import "block/faq";
+@import "block/design";
+@import "block/hygge";
 
-@import "block/advantages/advantages-1";
-@import "block/advantages/advantages-2";
-@import "block/advantages/advantages-3";
-@import "block/advantages/advantages-4";
-@import "block/advantages/advantages-5";
-@import "block/advantages/advantages-6";
-@import "block/advantages/advantages-7";
-@import "block/advantages/advantages-8";
-@import "block/advantages/advantages-9";
-@import "block/advantages/advantages-10";
-
-@import "block/footer/footer-1";
-@import "block/footer/footer-2";
+@import "block/footer";
 
 
 
-@media(max-width: $pc){
-
+.section-grey{
+  background-color: #f7f7f7;
+  box-shadow: 2px 0px 5px 0px rgba(34, 60, 80, 0.2);
 }
 
-@media(max-width: $tablet){
-  
+#tooltip {
+  z-index: 9999;
+  position: absolute;
+  display: none;
+  top: 0px;
+  left: 0px;
+  background-color: #c7c7c7;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  color: #000;
 }
-
-@media(max-width: $mobile){
-  
-}
-
-@media(max-width: $mobileSmall){
-  
-}
-
-

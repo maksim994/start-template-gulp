@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  z-index: 10;
   bottom: 15px;
   left: 50%;
   width: 900px;
@@ -12,20 +13,26 @@
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: $mobile) {
+    max-width: 95%;
+    padding: rem(10);
+  }
+
   &__text {
     margin: 0;
     font-size: rem(12);
     text-align: left;
-    color: #3333;
+    color: #333;
   }
   &__button{
-    border: 1px solid #C7C7C7;
-    padding: rem(5) rem(15);
+    
     @media (min-width: $mobile) {
       margin: 0 0 0 25px;
     }
     @media (max-width: $mobile) {
       margin: 10px 0 0 0;
+      width: 100%;
     }
   }
   &.show{
@@ -35,6 +42,7 @@
     @media (max-width: $mobile) {
       display: block;
       text-align: left;
+      line-height: 1.2;
     }
   }
 }

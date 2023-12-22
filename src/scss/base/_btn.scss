@@ -1,19 +1,28 @@
 .btn{
+  padding: 0px;
+  border: 0px;
   display: inline-block;
   text-align: center;
-  padding: rem(10) rem(15);
-  line-height: 1.2;
-  background-color: #c7c7c7;
-  border: 1px solid #c7c7c7;
+  border: 1px solid var(--primary);
+  background-color: var(--primary);
+  border-radius: var(--btn-radius);
+  color: #FFF;
+  transition: all .3s;
+  padding: 15px 30px;
 
+  
   &:active,
-  &:focus,
   &:hover{
     background-color: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
   }
 
   &:disabled{
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  &-big{
   }
 }

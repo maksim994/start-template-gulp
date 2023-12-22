@@ -14,9 +14,10 @@
 	"author": "FLS",
 	"license": "ISC",
 	"dependencies": {
+		"gulp-avif": "^1.1.1",
 		"gulp-cli": "^2.3.0",
-		"gulp-uglify": "^3.0.2",
-		"swiper": "^7.4.1"
+		"gulp-imagemin": "^7.1.0",
+		"gulp-uglify": "^3.0.2"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.3",
@@ -32,11 +33,9 @@
 		"gulp-fonter-fix": "latest",
 		"gulp-group-css-media-queries": "latest",
 		"gulp-if": "latest",
-		"gulp-imagemin": "latest",
 		"gulp-newer": "latest",
 		"gulp-notify": "latest",
 		"gulp-plumber": "latest",
-		"gulp-pug": "latest",
 		"gulp-rename": "latest",
 		"gulp-replace": "latest",
 		"gulp-sass": "latest",
@@ -53,9 +52,6 @@
 		"postcss-scss": "^4.0.3",
 		"rollup-plugin-uglify": "^6.0.4",
 		"sass": "latest",
-		"stylelint": "^14.2.0",
-		"stylelint-config-standard-scss": "^3.0.0",
-		"stylelint-order": "^5.0.0",
 		"vinyl-ftp": "latest",
 		"webp-converter": "2.2.3"
 	}

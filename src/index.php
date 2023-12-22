@@ -1,67 +1,65 @@
-<?php 
-	require './config.php';
-	require 'inc/form/form.php';
-?>
+<?php require './config.php'; ?>
+<?php require 'inc/form/form.php'; ?>
 
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('partials/head.php',{
-		"title" : "Сборка для создания лендингов",
-		"description" : "а тут нужно указать description лендинга"
-	})
+
+	@@include('partials/head.php')
 
 	<body data-yandex-metrica="<?php echo $ymCounter;?>">
 		<div style="display: none;">
 			<?php echo file_get_contents('./assets/img/icons/icons.svg');?>
 		</div>
 
-		@@include('partials/header/header-mobile.php',{
-			"btn" : "Главная",
-			"btn-description" : "Главная"
-		})
+		@@include('partials/header/header-mobile.php')
+		@@include('partials/header/header-clone.php')
+		@@include('partials/header/header.php')
 
-		@@include('partials/header/header-clone.php',{
-			"btn" : "Главная",
-			"btn-description" : "Главная"
-		})
+		@@include('partials/section-promo.php')
+		@@include('partials/application.php')
 
-		@@include('partials/header/header.php',{
-			"btn" : "Бесплатная консультация",
-			"btn-description" : "Главная"
-		})
+		@@include('partials/advantages.php')
+		@@include('partials/selection.php')
+		@@include('partials/technologies.php')
+		@@include('partials/slider.php')
+		@@include('partials/hygge.php')
+		@@include('partials/faq.php')
+		@@include('partials/footer.php')
 
-		@@include('partials/block/section-promo/section-promo-1.php')
+    @@include('partials/element/cookie.html')
 
-		
-
-		<div class="wrapper">
-			<!-- @@include('partials/block/tabs.html') -->
-			<!-- @@include('partials/block/accordion.html') -->
-			<?php //form('qwiz', 'qwiz');?>
+		<div id="modal-callback" class="modals" style="display: none;">
+			<?form(1,2);?>
 		</div>
 
-		<!-- @@include('partials/block/advantages/advantages-1.html') -->
+
+
+		<script src="./assets/js/vendor.js?<?php echo time();?>"></script>
+		<script src="./assets/js/main.js?<?php echo time();?>"></script>
+
+		<script>document.addEventListener('DOMContentLoaded', () => {
+
+			// new WOW().init();
+			wow = new WOW(
+				{
+					boxClass:     'wow',      // default
+					animateClass: 'animated', // default
+					offset:       0,          // default
+					mobile:       true,       // default
+					live:         true        // default
+				}
+			)
+			wow.init();
+
+
+		});</script>
+
 		
+		<script type="text/javascript" src="./inc/form/js/jquery.validate.min.js?<?php echo time();?>"></script>
+		<script type="text/javascript" src="./inc/form/js/messages_ru.js?<?php echo time();?>"></script>
+		<script type="text/javascript" src="./inc/form/js/form.js?<?php echo time();?>"></script>
 
-		<!-- @@include('partials/section-promo.php') -->
-		<!-- @@include('partials/slider.html') -->
 
-		@@include('partials/block/advantages/advantages-1.html')
-
-    
-
-		<div id="modal-callback" style="display: none;">
-			<?form(1,1);?>
-		</div>
-
-		@@include('partials/block/cookie.html')
-		@@include('partials/block/modal-result.html')
-
-		<script src="./assets/js/vendor.js"></script>
-		<script src="./assets/js/main.js"></script>
-		<script type="text/javascript" src="./inc/form/js/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="./inc/form/js/messages_ru.js"></script>
-		<script type="text/javascript" src="./inc/form/js/form.js"></script>
-		<script src="//cdn.callibri.ru/callibri.js" type="text/javascript" charset="utf-8"></script>
+		
 	</body>
 </html>

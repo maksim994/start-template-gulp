@@ -1,23 +1,67 @@
 .section-promo {
+  padding: 40px 0px;
 
   // .section-promo__wrapper
-
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @media(max-width: $mobile){
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   // .section-promo__content
 
   &__content {
-    grid-column: 2 span;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    @media(max-width: $small-pc){
+      width: 90%;
+    }
+
+    @media(max-width: em(1100.99)){
+      width: 100%;
+    }
+
+    @media(max-width: $mobileSmall){
+      gap: 10px;
+    }
+
+    .btn{
+
+      @media(max-width: $mobileSmall){
+        width: 100%;
+      }
+    }
   }
 
   // .section-promo__title
 
   &__title {
-    font-size: rem(40);
-    font-weight: bold;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    margin: 0px;
+
+    span{
+      color: var(--primary);
+    }
+
+    @media(max-width: em(1024.99)){
+      font-size: 30px;
+    }
+
+    @media(max-width: $mobile){
+      font-size: 24px;
+    }
   }
 
   // .section-promo__text
@@ -25,9 +69,64 @@
   &__text {
   }
 
-  // .section-promo__form
+  // .section-promo__utps
 
-  &__form {
-    grid-column: 1 span;
+  &__utps {
+    display: flex;
+    gap: 70px;
+
+    @media(max-width: em(1100.99)){
+      gap: 40px;
+    }
+
+    @media(max-width: $mobileSmall){
+      width: 100%;
+      justify-content: space-around;
+      gap: 0px;
+    }
+  }
+
+  // .section-promo__utp
+
+  &__utp {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // .section-promo__utp--icons
+
+  &__utp--icons {
+    width: 60px;
+    height: 60px;
+    color: var(--primary);
+    margin-bottom: 10px;
+
+    @media(max-width: em(1100.99)){
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  // .section-promo__utp--text
+
+  &__utp--text {
+  }
+
+  // .section-promo__images
+
+  &__images {
+    @media(max-width: $mobile){
+      order: -1;
+
+      img{
+        width: 100%;
+        max-width: 300px;
+        display: block;
+        margin: 0px auto;
+      }
+    }
   }
 }

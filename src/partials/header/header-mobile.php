@@ -1,6 +1,6 @@
-<div class="header-mobile block-fixed is-fixed">
+<div class="header-mobile block-fixed">
     <div class="wrapper">
-        <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
             <div class="header-mobile__burger-menu" data-control="menu-burger">
                 <span class="header-mobile__burger--global header-mobile__burger-top"></span>
                 <span class="header-mobile__burger--global header-mobile__burger-middle"></span>
@@ -8,40 +8,31 @@
             </div>
 
             <div class="header-mobile__logo">
-                <img src="./assets/img/logo.svg" alt="logo">
+                @@include('../element/logo.html')
             </div>
-
-            <div class="header-mobile__contact">
-                <?php if ( !empty($phone_site) ) :?>
-                    <div class="header-mobile__contact-item header-mobile__phone">
-                        <a 
-                            href="tel:<?php echo $phone_site; ?>" 
-                            class="callibri_phone" 
-                            onclick="ym(<?php echo $ymCounter;?>, 'reachGoal', 'click_phone', {'place': 'header-mobile'}); return true;"
-                        >
-                        </a>
-                        <svg height="30" width="30">
-                            <use xlink:href="#phone"></use>
-                        </svg>
-                    </div>
-                <?php endif; ?>
-                <div class="header-mobile__contact-item  header-mobile__email">
+            <a href="<?php echo $link; ?>" class="header-mobile__where-buy header__list-link--where-buy" target="_blank">Где купить?</a>
+            <?php if ( !empty($phone) ) :?>
+                <div class="header-mobile__contact-item header-mobile__phone">
                     <a 
-                        class="lk-btn--js header-mobile__mail" 
-                        href="#modal-callback" data-fancybox="" 
-                        data-description="Оставить заявку (в шапке)
-                    "></a>
-                    <svg width="30" height="30" >
-                        <use xlink:href="#mail"></use>
+                        href="tel:<?php echo $phone; ?>" 
+                        onclick="ym(<?php echo $ymCounter;?>, 'reachGoal', 'click_phone', {'place': 'header-mobile'}); return true;"
+                    >
+                    </a>
+                    <svg height="30" width="30">
+                        <use xlink:href="#phone"></use>
                     </svg>
                 </div>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
     <div class="wrapper">
         <ul class="header-mobile-menu list-reset" style="display: none;" data-control="menu">
             <?php foreach($aMenuLinks as $menuItem): ?>
-            <li class="header-mobile__list-item"><a href="<?php echo $menuItem[1];?>" class="header-mobile__link link"><?php echo $menuItem[0]?></a></li>
+            <li class="header-mobile__list-item">
+                <a href="<?php echo $menuItem[1];?>" class="header-mobile__link link" onclick="ym(<?php echo $ymCounter;?>, 'reachGoal', 'click_menu', {'name': '<?php echo $menuItem[0];?>', 'place': 'mobile-menu'}); return true;">
+                    <?php echo $menuItem[0]?>
+                </a>
+            </li>
             <?php endforeach;?>      
         </ul>
     </div>
